@@ -6,11 +6,22 @@ var generatePassword = function() {
   passwordLength = parseInt(passwordLength);
   // validate response
   if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Please enter a number between 8 and 128");
+    window.alert("You must enter a number between 8 and 128. Please try again.");
     generatePassword();
   }
 
-  
+  // prompt user for various character types
+  var lowercaseConfirm = window.confirm("Should the password include lowercase letters?");
+  var uppercaseConfirm = window.confirm("Should the password contain uppercase letters?");
+  var numericConfirm = window.confirm("Should the password contain numbers?");
+  var specialConfirm = window.confirm("Should the password contain special characters? (!@#$%^&*)");
+  // validate at least one response is true
+  if (!lowercaseConfirm && !uppercaseConfirm && !numericConfirm && !specialConfirm) {
+    window.alert("You must select at least one character type. Please try again.");
+    generatePassword();
+  }
+
+  console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
 }
 
 // Get references to the #generate element
