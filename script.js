@@ -15,7 +15,7 @@ var generatePassword = function() {
   // validate response
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("You must enter a number between 8 and 128. Please try again.");
-    return;
+    return "Unable to generate password. Please try again by clicking the button below.";
   }
 
   // prompt user for various character types
@@ -26,7 +26,7 @@ var generatePassword = function() {
   // validate at least one response is true
   if (!lowercaseConfirm && !uppercaseConfirm && !numericConfirm && !specialConfirm) {
     window.alert("You must select at least one character type. Please try again.");
-    return;
+    return "Unable to generate password. Please try again by clicking the button below.";
   }
 
   // console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
