@@ -1,5 +1,11 @@
 // Assignment code here
 var generatePassword = function() {
+  // character arrays
+  lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  numbers = ["0","1","2","3","4","5","6","7","8","9"];
+  special = ["!","@","#","$","%","&","*","?","^"];
+
   // prompt user for password length
   var passwordLength = window.prompt("How many characters long should the password be? (Please choose an option between 8 and 128 characters)");
   // convert response string to integer
@@ -22,6 +28,8 @@ var generatePassword = function() {
   }
 
   console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
+
+
 }
 
 // Get references to the #generate element
