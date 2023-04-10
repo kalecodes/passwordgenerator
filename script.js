@@ -29,7 +29,7 @@ var generatePassword = function() {
     generatePassword();
   }
 
-  console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
+  // console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
 
   // push usable characters to new array based on user confirm responses
   if (lowercaseConfirm) {
@@ -45,7 +45,7 @@ var generatePassword = function() {
     usableCharacters.push(...special);
   }
 
-  console.log(usableCharacters);
+  // console.log(usableCharacters);
 
   // randomly select characters and push to new array
   var selectedCharacters = [];
@@ -53,7 +53,12 @@ var generatePassword = function() {
     selectedCharacters.push(usableCharacters[Math.floor(Math.random() * usableCharacters.length)])
   }
 
-  console.log(selectedCharacters);
+  // convert array to string
+  // console.log(selectedCharacters);
+  var password = selectedCharacters.join("");
+  // return password string to writePassword() function to be displayed
+  // console.log(password);
+  return password;
 }
 
 // Get references to the #generate element
