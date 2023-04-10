@@ -31,7 +31,7 @@ var generatePassword = function() {
 
   console.log(passwordLength, lowercaseConfirm, uppercaseConfirm, numericConfirm, specialConfirm);
 
-  // generate password based on responses
+  // push usable characters to new array based on user confirm responses
   if (lowercaseConfirm) {
     usableCharacters.push(...lowercase);
   }
@@ -46,6 +46,14 @@ var generatePassword = function() {
   }
 
   console.log(usableCharacters);
+
+  // randomly select characters and push to new array
+  var selectedCharacters = [];
+  for (i = 0; i < passwordLength; i++) {
+    selectedCharacters.push(usableCharacters[Math.floor(Math.random() * usableCharacters.length)])
+  }
+
+  console.log(selectedCharacters);
 }
 
 // Get references to the #generate element
